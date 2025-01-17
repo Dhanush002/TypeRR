@@ -30,11 +30,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -67,7 +68,7 @@ main {
 }
 
 .stat span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -123,6 +124,8 @@ textarea:focus {
     display: flex;
     gap: 1rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 button {
@@ -268,6 +271,22 @@ select {
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -277,5 +296,29 @@ select {
     
     .results-grid {
         grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    textarea {
+        height: 120px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .switch {
+        width: 50px;
+        height: 28px;
+    }
+
+    .slider:before {
+        height: 22px;
+        width: 22px;
+        left: 3px;
+        bottom: 3px;
     }
 }
